@@ -1,0 +1,36 @@
+/* Add this to your global CSS or create a new CSS file */
+.audio-wave {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  height: 24px;
+  gap: 2px;
+}
+
+.audio-wave-bar {
+  width: 2px;
+  min-height: 2px;
+  background-color: #334155;
+  border-radius: 2px;
+  transition: height 0.2s ease;
+}
+
+.dark .audio-wave-bar {
+  background-color: #94a3b8;
+}
+
+@keyframes sound-wave {
+  0% {
+    height: 10%;
+  }
+  50% {
+    height: 100%;
+  }
+  100% {
+    height: 10%;
+  }
+}
+
+.animate-sound {
+  animation: sound-wave 1.2s ease-in-out infinite;
+}

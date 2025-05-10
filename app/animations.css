@@ -1,0 +1,300 @@
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+@keyframes blink-caret {
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: #3b82f6;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.7);
+  }
+
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 10px rgba(59, 130, 246, 0);
+  }
+
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(59, 130, 246, 0);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* Logo animation */
+@keyframes logoGrowFade {
+  0% {
+    opacity: 0;
+    transform: scale(0.5) translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.logo {
+  animation: logoGrowFade 1s ease-out forwards;
+}
+
+.float {
+  animation: floating 3s ease-in-out infinite;
+}
+
+.float-slow {
+  animation: float 8s ease-in-out infinite;
+}
+
+.float-fast {
+  animation: float 4s ease-in-out infinite;
+}
+
+.typing-animation {
+  overflow: hidden;
+  white-space: nowrap;
+  animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease-in-out forwards;
+}
+
+.slide-up {
+  animation: slideUp 0.5s ease-in-out forwards;
+}
+
+.pulse {
+  animation: pulse 2s infinite;
+}
+
+.shimmer {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.2) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 2s infinite;
+}
+
+/* Frosted glass effect */
+.frosted-glass {
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  background-color: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+}
+
+/* Floating animation for cards */
+.floating-card {
+  animation: float 6s ease-in-out infinite;
+  transform-origin: center center;
+}
+
+/* Staggered floating for multiple cards */
+.floating-card:nth-child(2n) {
+  animation-delay: 1s;
+}
+
+.floating-card:nth-child(3n) {
+  animation-delay: 2s;
+}
+
+/* Dynamic island animation */
+.dynamic-island {
+  border-radius: 20px;
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 8px 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  z-index: 100;
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.dynamic-island:hover {
+  transform: translateX(-50%) scale(1.05);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+}
+
+.dynamic-island-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+}
+
+/* Text typing animation */
+.typing-text {
+  overflow: hidden;
+  border-right: 2px solid;
+  white-space: nowrap;
+  animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+}
+
+/* Voice bubble animation */
+.voice-bubble {
+  position: relative;
+  animation: pulse 2s infinite;
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  transition: transform 0.3s ease;
+}
+
+.voice-bubble:hover {
+  transform: scale(1.02);
+}
+
+.voice-bubble::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 20px;
+  border-width: 10px 10px 0;
+  border-style: solid;
+  border-color: rgba(255, 255, 255, 0.9) transparent;
+}
+
+/* Page transitions */
+.page-transition-enter {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.page-transition-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 300ms, transform 300ms;
+}
+
+.page-transition-exit {
+  opacity: 1;
+}
+
+.page-transition-exit-active {
+  opacity: 0;
+  transition: opacity 300ms;
+}
+
+/* Journal card colors - NEW PALETTE */
+.card-red {
+  background-color: #d44a4a;
+  color: white;
+  border-radius: 1rem;
+  padding: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.card-purple {
+  background-color: #9c5ef7;
+  color: white;
+  border-radius: 1rem;
+  padding: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.card-green {
+  background-color: #a5d6a7;
+  border-radius: 1rem;
+  padding: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.card-blue {
+  background-color: #90caf9;
+  border-radius: 1rem;
+  padding: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.card-yellow {
+  background-color: #fff176;
+  border-radius: 1rem;
+  padding: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.card-orange {
+  background-color: #ffcc80;
+  border-radius: 1rem;
+  padding: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+/* Journal card hover effects */
+.card-red:hover,
+.card-purple:hover,
+.card-green:hover,
+.card-blue:hover,
+.card-yellow:hover,
+.card-orange:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}

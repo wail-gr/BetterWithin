@@ -1,0 +1,104 @@
+@import "./animations.css";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+    --primary: 221.2 83.2% 53.3%;
+    --primary-foreground: 210 40% 98%;
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 221.2 83.2% 53.3%;
+    --radius: 0.5rem;
+
+    /* Custom colors for BetterWithin */
+    --navy-50: 217 33% 97%;
+    --navy-100: 220 33% 93%;
+    --navy-200: 215 25% 84%;
+    --navy-300: 217 22% 72%;
+    --navy-400: 218 22% 60%;
+    --navy-500: 218 28% 45%;
+    --navy-600: 218 41% 35%;
+    --navy-700: 218 44% 28%;
+    --navy-800: 218 50% 20%;
+    --navy-900: 220 60% 15%;
+    --navy-950: 224 71% 10%;
+
+    --skyblue-50: 204 100% 97%;
+    --skyblue-100: 204 94% 94%;
+    --skyblue-200: 201 94% 86%;
+    --skyblue-300: 199 95% 74%;
+    --skyblue-400: 198 93% 60%;
+    --skyblue-500: 199 89% 48%;
+    --skyblue-600: 200 98% 39%;
+    --skyblue-700: 201 96% 32%;
+    --skyblue-800: 201 90% 27%;
+    --skyblue-900: 202 80% 24%;
+    --skyblue-950: 204 80% 16%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Custom styles for BetterWithin */
+.bg-navy-gradient {
+  background: linear-gradient(135deg, hsl(var(--navy-800)), hsl(var(--navy-950)));
+}
+
+.bg-skyblue-gradient {
+  background: linear-gradient(135deg, hsl(var(--skyblue-400)), hsl(var(--skyblue-600)));
+}
+
+/* Navigation styles */
+.nav-item {
+  @apply flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-foreground;
+}
+
+.nav-item.active {
+  @apply bg-accent text-accent-foreground;
+}
+
+/* Card hover effects */
+.hover-card {
+  @apply transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--muted));
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--muted-foreground));
+}
